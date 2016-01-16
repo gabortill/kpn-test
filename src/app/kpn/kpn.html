@@ -18,13 +18,15 @@
 				</span>
 				<span class="subs-table__cell">{{ ::subs.volume }}</span>
 				<span class="subs-table__cell">{{ ::subs.data }}</span>
-				<span class="subs-table__cell">{{ ::subs.calc.deviceDiscPrice }}</span>
 				<span class="subs-table__cell">
-					<span class="subs__cell__subs-orig-price">
-						{{ ::subs.subsPrice }}
+					{{ ::subs.calc.deviceDiscPrice | priceFormatter }}
+				</span>
+				<span class="subs-table__cell">
+					<span class="subs-table__cell__subs-orig-price">
+						{{ ::subs.subsPrice | priceFormatter }}
 					</span>
 					<span class="subs-table__cell__subs-discount-price">
-						{{ ::subs.calc.subsDiscPrice }}
+						{{ ::subs.calc.subsDiscPrice | priceFormatter }}
 					</span>
 				</span>
 			</label>

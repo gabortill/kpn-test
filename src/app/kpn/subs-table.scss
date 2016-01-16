@@ -29,5 +29,9 @@
 			justify-content: space-between;
 			width: 25%;
 		}
+
+		&__subs-orig-price {
+			text-decoration: line-through;
+		}
 	}
 }
