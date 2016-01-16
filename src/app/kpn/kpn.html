@@ -17,7 +17,7 @@
 					{{ ::subs.name }}
 				</span>
 				<span class="subs-table__cell">{{ ::subs.volume }}</span>
-				<span class="subs-table__cell">{{ ::subs.data }}</span>
+				<span class="subs-table__cell">{{ ::subs.data | dataFormatter }}</span>
 				<span class="subs-table__cell">
 					{{ ::subs.calc.deviceDiscPrice | priceFormatter }}
 				</span>
