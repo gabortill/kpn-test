@@ -1,7 +1,7 @@
 (function() {
 	'use strict';
 
-	function KpnController(DataService) {
+	function KpnController(CONST, DataService) {
 		var vm = this;
 
 		function calcDiscountPrice(price, discount) {
@@ -24,6 +24,8 @@
 					vm.product = data;
 
 					addCalcValues(data.deviceOrigPrice, data.subscriptions);
+
+					vm.selected = data.subscriptions[0];
 				} else {
 					vm.isDataError = true;
 					vm.errorMsg = data.errorMsg;

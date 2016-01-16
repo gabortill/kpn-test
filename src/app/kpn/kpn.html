@@ -32,4 +32,27 @@
 			</label>
 		</li>
 	</ul>
+
+	<section>
+		<div>
+			<div>Phone</div>
+			{{ kpn.selected.calc.deviceDiscPrice | priceFormatter }}
+		</div>
+		total per month: {{ kpn.selected.calc.subsDiscPrice | priceFormatter }}
+		<br>
+		total one-off: {{ kpn.selected.calc.deviceDiscPrice | priceFormatter }}
+		<br>
+		<button>Bestellen</button>
+		<br>
+		Monthly costs
+		<br>
+		Zorgeloos Standaard {{ kpn.selected.subsPrice | priceFormatter }}
+		<br>
+		Discount as long as your subscription runs -{{ kpn.selected.subsDiscount | priceFormatter }}
+		<br>
+		One-off
+		Apple iPhone 6s 64GB Zilver {{ kpn.selected.calc.deviceDiscPrice | priceFormatter }}
+		<br>
+		original {{ kpn.product.deviceOrigPrice | priceFormatter }}
+	</section>
 </section>
