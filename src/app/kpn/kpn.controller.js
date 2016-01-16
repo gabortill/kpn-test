@@ -1,8 +1,19 @@
 (function() {
 	'use strict';
 
-	function KpnController() {
-		this.msg = 'lorem ipsum dolor sit amet';
+	function KpnController(DataService) {
+		var vm = this;
+
+		DataService
+			.getData()
+			.then(function (data) {
+				if (!data.isError) {
+					vm.msg = data.test;
+				} else {
+					vm.isDataError = true;
+					vm.errorMsg = data.errorMsg;
+				}
+			});
 	}
 
 	angular

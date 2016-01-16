@@ -1,1 +1,5 @@
-<h1>{{ kpn.msg }}</h1>
+<h1 ng-if="kpn.isDataError">{{ kpn.errorMsg }}</h1>
+
+<section ng-if="!kpn.isDataError">
+	<h1>{{ kpn.msg }}</h1>
+</section>
