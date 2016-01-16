@@ -1,3 +1,57 @@
 {
-	"test": "hello data.json"
+    "images": [{
+		"large": "apple-iphone-6s-64gb-silver__front__large.png",
+		"thumb": "apple-iphone-6s-64gb-silver__front__thumb.png"
+    }, {
+		"large": "apple-iphone-6s-64gb-silver__right-side__large.png",
+		"thumb": "apple-iphone-6s-64gb-silver__right-side__thumb.png"
+    }, {
+		"large": "apple-iphone-6s-64gb-silver__back__large.png",
+		"thumb": "apple-iphone-6s-64gb-silver__back__thumb.png"
+    }],
+    "name": "Apple iPhone 6s 64GB Zilver",
+    "deviceOrigPrice": 729,
+    "subscriptions": [{
+        "data": 500,
+        "deviceDiscount": 220,
+        "name": "Basis Mobiel",
+        "subsDiscount": 5,
+        "subsPrice": 44,
+        "volume": "150 min or sms"
+    }, {
+        "data": 1024,
+        "deviceDiscount": 390,
+        "name": "Vooral Internet Instap",
+        "subsDiscount": 5,
+        "subsPrice": 47.5,
+        "volume": "150 min or sms"
+    }, {
+        "data": 5120,
+        "deviceDiscount": 480,
+        "name": "Vooral Internet Standaard",
+        "subsDiscount": 5,
+        "subsPrice": 52.5,
+        "volume": "200 min or sms"
+    }, {
+        "data": 1024,
+        "deviceDiscount": 480,
+        "name": "Zorgeloos Instap",
+        "subsDiscount": 10,
+        "subsPrice": 59,
+        "volume": "Unlimited"
+    }, {
+        "data": 10240,
+        "deviceDiscount": 600,
+        "name": "Zorgeloos Premium",
+        "subsDiscount": 10,
+        "subsPrice": 74,
+        "volume": "Unlimited"
+    }, {
+        "data": 5120,
+        "deviceDiscount": 530,
+        "name": "Zorgeloos Standaard",
+        "subsDiscount": 10,
+        "subsPrice": 64,
+        "volume": "Unlimited"
+    }]
 }
