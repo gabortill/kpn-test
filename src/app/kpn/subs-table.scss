@@ -1,0 +1,33 @@
+.subs-table {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+	&__row {
+		display: flex;
+	}
+
+	&__cell {
+		&:first-child {
+			width: 25%;
+		}
+
+		&:nth-child(2) {
+			width: 25%;
+		}
+
+		&:nth-child(3) {
+			width: 10%;
+		}
+
+		&:nth-child(4) {
+			width: 15%;
+		}
+
+		&:last-child {
+			display: flex;
+			justify-content: space-between;
+			width: 25%;
+		}
+	}
+}

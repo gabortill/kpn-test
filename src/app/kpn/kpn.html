@@ -1,5 +1,33 @@
 <h1 ng-if="kpn.isDataError">{{ kpn.errorMsg }}</h1>
 
 <section ng-if="!kpn.isDataError">
-	<h1>{{ kpn.msg }}</h1>
+	<header>{{ ::kpn.product.name }}</header>
+	<ul class="subs-table">
+		<li class="subs-table__row">
+			<span class="subs-table__cell">Name</span>
+			<span class="subs-table__cell">Minutes/sms</span>
+			<span class="subs-table__cell">Internet</span>
+			<span class="subs-table__cell">Device price</span>
+			<span class="subs-table__cell">Costs/month</span>
+		</li>
+		<li ng-repeat="subs in ::kpn.product.subscriptions">
+			<label class="subs-table__row" for="subs-radio-{{ $index }}">
+				<span class="subs-table__cell">
+					<input id="subs-radio-{{ $index }}" type="radio" name="subs">
+					{{ ::subs.name }}
+				</span>
+				<span class="subs-table__cell">{{ ::subs.volume }}</span>
+				<span class="subs-table__cell">{{ ::subs.data }}</span>
+				<span class="subs-table__cell">calculated device price</span>
+				<span class="subs-table__cell">
+					<span class="subs__cell__subs-orig-price">
+						{{ ::subs.subsPrice }}
+					</span>
+					<span class="subs-table__cell__subs-discount-price">
+						calculated discount price
+					</span>
+				</span>
+			</label>
+		</li>
+	</ul>
 </section>

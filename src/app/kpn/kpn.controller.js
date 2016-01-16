@@ -8,7 +8,7 @@
 			.getData()
 			.then(function (data) {
 				if (!data.isError) {
-					vm.msg = data.test;
+					vm.product = data;
 				} else {
 					vm.isDataError = true;
 					vm.errorMsg = data.errorMsg;
