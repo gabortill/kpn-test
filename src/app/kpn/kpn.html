@@ -34,6 +34,8 @@
 	</ul>
 
 	<section>
+		<img alt="{{ ::kpn.product.name }}" ng-src="{{ kpn.product.images[0].large }}" />
+		<img alt="{{ ::kpn.product.name }}" ng-repeat="src in ::kpn.product.images" ng-src="{{ src.thumb }}" />
 		<div>
 			<div>Phone</div>
 			{{ kpn.selected.calc.deviceDiscPrice | priceFormatter }}

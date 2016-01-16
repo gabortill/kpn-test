@@ -1,13 +1,13 @@
 {
     "images": [{
-		"large": "apple-iphone-6s-64gb-silver__front__large.png",
-		"thumb": "apple-iphone-6s-64gb-silver__front__thumb.png"
+		"large": "assets/images/product/apple-iphone-6s-64gb-silver__front__large.png",
+		"thumb": "assets/images/product/apple-iphone-6s-64gb-silver__front__thumb.png"
     }, {
-		"large": "apple-iphone-6s-64gb-silver__right-side__large.png",
-		"thumb": "apple-iphone-6s-64gb-silver__right-side__thumb.png"
+		"large": "assets/images/product/apple-iphone-6s-64gb-silver__right-side__large.png",
+		"thumb": "assets/images/product/apple-iphone-6s-64gb-silver__right-side__thumb.png"
     }, {
-		"large": "apple-iphone-6s-64gb-silver__back__large.png",
-		"thumb": "apple-iphone-6s-64gb-silver__back__thumb.png"
+		"large": "assets/images/product/apple-iphone-6s-64gb-silver__back__large.png",
+		"thumb": "assets/images/product/apple-iphone-6s-64gb-silver__back__thumb.png"
     }],
     "name": "Apple iPhone 6s 64GB Zilver",
     "deviceOrigPrice": 729,
