@@ -45,28 +45,65 @@
 		</ul>
 	</div>
 
-	<section class="product__sidebar">
-		<img alt="{{ ::kpn.product.name }}" ng-src="{{ ::kpn.product.images[0].large }}" />
-		<img alt="{{ ::kpn.product.name }}" ng-repeat="src in ::kpn.product.images" ng-src="{{ ::src.thumb }}" />
-		<div>
-			<div>Phone</div>
-			{{ kpn.selected.calc.deviceDiscPrice | priceFormatter }}
+	<section class="product__sidebar cart">
+		<div class="cart__device">
+			<img
+				alt="{{ ::kpn.product.name }}"
+				class="cart__device__large"
+				height="390"
+				ng-src="{{ ::kpn.product.images[0].large }}"
+				width="200" />
+			<div class="cart__device__sidebar">
+				<figure class="cart__device__thumb" ng-repeat="src in ::kpn.product.images">
+					<img
+						alt="{{ ::kpn.product.name }}"
+						class="cart__device__thumb__img"
+						ng-src="{{ ::src.thumb }}" />
+				</figure>
+				<div class="cart__device__price">
+					<div class="cart__device__price__txt">Phone</div>
+					<div class="cart__device__price__num">
+						{{ kpn.selected.calc.deviceDiscPrice }},-
+					</div>
+				</div>
+			</div>
 		</div>
-		total per month: {{ kpn.selected.calc.subsDiscPrice | priceFormatter }}
-		<br>
-		total one-off: {{ kpn.selected.calc.deviceDiscPrice | priceFormatter }}
-		<br>
-		<button>Bestellen</button>
-		<br>
-		Monthly costs
-		<br>
-		Zorgeloos Standaard {{ kpn.selected.subsPrice | priceFormatter }}
-		<br>
-		Discount as long as your subscription runs -{{ kpn.selected.subsDiscount | priceFormatter }}
-		<br>
-		One-off
-		Apple iPhone 6s 64GB Zilver {{ kpn.selected.calc.deviceDiscPrice | priceFormatter }}
-		<br>
-		original {{ kpn.product.deviceOrigPrice | priceFormatter }}
+
+		<div class="cart__final cart__table">
+			<div class="cart__table__txt cart__table__strong">Total per month:</div>
+			<div class="cart__table__price cart__table__strong">
+				{{ kpn.selected.calc.subsDiscPrice | priceFormatter }}
+			</div>
+			<div class="cart__table__txt">Total one-off:</div>
+			<div class="cart__table__price cart__table__strong">
+				{{ kpn.selected.calc.deviceDiscPrice | priceFormatter }}
+			</div>
+			<button class="cart__final__btn cart__table__single-row">Bestellen</button>
+		</div>
+
+		<div class="cart__details cart__table">
+			<header class="cart__details__header cart__table__single-row">Monthly costs</header>
+			<div class="cart__table__txt cart__table__strong">{{ kpn.selected.name }}</div>
+			<div class="cart__table__price cart__table__strong">
+				{{ kpn.selected.subsPrice | priceFormatter }}
+			</div>
+			<div class="cart__table__txt">
+				Discount as long as your subscription runs
+			</div>
+			<div class="cart__table__price cart__table__strong cart__table__highlight">
+				-{{ kpn.selected.subsDiscount | priceFormatter }}
+			</div>
+
+			<header class="cart__details__header cart__table__single-row">One-off</header>
+			<div class="cart__table__txt cart__table__strong">
+				{{ kpn.product.name }}
+			</div>
+			<div class="cart__table__price cart__table__strong cart__table__highlight">
+				{{ kpn.selected.calc.deviceDiscPrice | priceFormatter }}
+			</div>
+			<div class="cart__table__txt">
+				original {{ kpn.product.deviceOrigPrice | priceFormatter }}
+			</div>
+		</div>
 	</section>
 </section>
