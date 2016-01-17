@@ -18,13 +18,14 @@
 			align-items: center;
 			background: #fefefe;
 			border-radius: 10px;
+			cursor: pointer;
 			display: flex;
 			justify-content: center;
 			margin: 0 10% 10% 0;
 			padding: 10% 0;
 			position: relative;
 
-			&:first-child::after {
+			&--selected::after {
 				border-color: transparent #fefefe transparent transparent;
 				border-style: solid;
 				border-width: 10px 10px 10px 0;

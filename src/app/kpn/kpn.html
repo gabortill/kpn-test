@@ -51,10 +51,14 @@
 				alt="{{ ::kpn.product.name }}"
 				class="cart__device__large"
 				height="390"
-				ng-src="{{ ::kpn.product.images[0].large }}"
+				ng-src="{{ kpn.largeImgSrc }}"
 				width="200" />
 			<div class="cart__device__sidebar">
-				<figure class="cart__device__thumb" ng-repeat="src in ::kpn.product.images">
+				<figure
+					class="cart__device__thumb"
+					ng-class="{'cart__device__thumb--selected': $index == kpn.thumbSelected}"
+					ng-click="kpn.setLarge($index)"
+					ng-repeat="src in ::kpn.product.images">
 					<img
 						alt="{{ ::kpn.product.name }}"
 						class="cart__device__thumb__img"
