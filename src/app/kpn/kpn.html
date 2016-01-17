@@ -1,46 +1,51 @@
 <h1 ng-if="kpn.isDataError">{{ kpn.errorMsg }}</h1>
 
-<section ng-if="!kpn.isDataError">
-	<header>{{ ::kpn.product.name }}</header>
-	<ul class="subs-table">
-		<li class="subs-table__row">
-			<span class="subs-table__cell">Name</span>
-			<span class="subs-table__cell">Minutes/sms</span>
-			<span class="subs-table__cell">Internet</span>
-			<span class="subs-table__cell">Device price</span>
-			<span class="subs-table__cell">Costs/month</span>
-		</li>
-		<li ng-repeat="subs in ::kpn.product.subscriptions">
-			<label class="subs-table__row" for="subs-radio-{{ $index }}">
-				<span class="subs-table__cell">
-					<input
-						id="subs-radio-{{ $index }}"
-						name="subs"
-						ng-checked="$first"
-						ng-model="kpn.selected"
-						ng-value="subs"
-						type="radio"
-					>
-					{{ ::subs.name }}
-				</span>
-				<span class="subs-table__cell">{{ ::subs.volume }}</span>
-				<span class="subs-table__cell">{{ ::subs.data | dataFormatter }}</span>
-				<span class="subs-table__cell">
-					{{ ::subs.calc.deviceDiscPrice | priceFormatter }}
-				</span>
-				<span class="subs-table__cell">
-					<span class="subs-table__cell__subs-orig-price">
-						{{ ::subs.subsPrice | priceFormatter }}
+<section class="product" ng-if="!kpn.isDataError">
+	<div class="product__left-container">
+		<header class="product__header">{{ ::kpn.product.name }}</header>
+		<ul class="subs-table product__table">
+			<li class="subs-table__caption">Select subscription</li>
+			<li class="subs-table__row subs-table__row--header">
+				<span class="subs-table__cell subs-table__cell--header">Name</span>
+				<span class="subs-table__cell subs-table__cell--header">Minutes/sms</span>
+				<span class="subs-table__cell subs-table__cell--header">Internet</span>
+				<span class="subs-table__cell subs-table__cell--header">Device price</span>
+				<span class="subs-table__cell subs-table__cell--header">Costs/month</span>
+			</li>
+			<li ng-repeat="subs in ::kpn.product.subscriptions">
+				<label
+						class="subs-table__row"
+						ng-class="{'subs-table__row--selected': kpn.selected == subs}"
+						for="subs-radio-{{ $index }}">
+					<span class="subs-table__cell subs-table__cell--strong subs-table__cell--split">
+						<input
+								id="subs-radio-{{ $index }}"
+								name="subs"
+								ng-checked="$first"
+								ng-model="kpn.selected"
+								ng-value="subs"
+								type="radio">
+						{{ ::subs.name }}
 					</span>
-					<span class="subs-table__cell__subs-discount-price">
-						{{ ::subs.calc.subsDiscPrice | priceFormatter }}
+					<span class="subs-table__cell">{{ ::subs.volume }}</span>
+					<span class="subs-table__cell">{{ ::subs.data | dataFormatter }}</span>
+					<span class="subs-table__cell subs-table__cell--strong">
+						{{ ::subs.calc.deviceDiscPrice | priceFormatter }}
 					</span>
-				</span>
-			</label>
-		</li>
-	</ul>
+					<span class="subs-table__cell">
+						<del>
+							{{ ::subs.subsPrice | priceFormatter }}
+						</del>
+						<ins class="subs-table__cell__subs-discount-price">
+							{{ ::subs.calc.subsDiscPrice | priceFormatter }}
+						</ins>
+					</span>
+				</label>
+			</li>
+		</ul>
+	</div>
 
-	<section>
+	<section class="product__sidebar">
 		<img alt="{{ ::kpn.product.name }}" ng-src="{{ ::kpn.product.images[0].large }}" />
 		<img alt="{{ ::kpn.product.name }}" ng-repeat="src in ::kpn.product.images" ng-src="{{ ::src.thumb }}" />
 		<div>

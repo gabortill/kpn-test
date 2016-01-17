@@ -3,8 +3,21 @@
 	margin: 0;
 	padding: 0;
 
+	&__caption {
+		font-size: 25px;
+	}
+
 	&__row {
 		display: flex;
+		padding: 2% 0;
+
+		&--header {
+			padding: 0;
+		}
+
+		&--selected {
+			background: #f2f2f2;
+		}
 	}
 
 	&__cell {
@@ -13,25 +26,41 @@
 		}
 
 		&:nth-child(2) {
-			width: 25%;
+			padding-left: 1%;
+			width: 20%;
 		}
 
 		&:nth-child(3) {
+			text-align: right;
 			width: 10%;
 		}
 
 		&:nth-child(4) {
-			width: 15%;
+			padding-left: 5%;
+			width: 25%;
 		}
 
 		&:last-child {
 			display: flex;
 			justify-content: space-between;
-			width: 25%;
+			width: 20%;
 		}
 
-		&__subs-orig-price {
-			text-decoration: line-through;
+		&--header {
+			font-size: 13px;
+		}
+
+		&--strong {
+			font-weight: bold;
+		}
+
+		&--split {
+			display: flex;
+		}
+
+		&__subs-discount-price {
+			color: #ff9802;
+			text-decoration: none;
 		}
 	}
 }
